@@ -6,7 +6,8 @@
     "gulp-imagemin": "^8.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
-    "gulp-useref": "^5.0.0"
+    "gulp-useref": "^5.0.0",
+    "npm-check-updates": "^14.0.2"
   },
   "devDependencies": {
     "browser-sync": "^2.27.10",
