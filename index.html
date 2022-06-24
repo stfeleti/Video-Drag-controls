@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html lang="en" xmlns="http://www.w3.org/1999/">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Video Drag</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div id="cursortwo"></div>
+    <div id="cont">
+        <video id="v0" tabindex="0" autobuffer preload loop controls>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video .
+        </video>
+    </div>
+    <canvas width="640" height="360"></canvas>
+
+    <div id="status">
+        <p>Is Mouse Down: <span id="isMouseDownElem">false</span></p>
+        <p>Mouse drag start: <span id="mouseDragStartElem"></span></p>
+        <p>Mouse drag end: <span id="mouseDragEndElem"></span></p>
+        <p>Video time: <span id="vidTimeElem">0</span></p>
+        <p> Mouse Current Position: <span id="mouse-position">0</span></p>
+        <p> Dragging? <span id="mouse-drgging">0</span></p>
+        <p> obj-position <span id="mouse-obj-position">0</span></p>
+        <p> eVENT-position <span id="mouse-event-position">0</span></p>
+    </div>
+
+
+    <!- Canvas->
+    <canvas width="640" height="360"></canvas>
+
+
+    <p><span id="fps-info">0</span>fps</p>
+    <p><pre id="metadata-info"></pre></p>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="script.js" type="text/javascript"></script>
+    <script src="canvas-frames.js" type="text/javascript"></script>
+</body>
+
+</html>
