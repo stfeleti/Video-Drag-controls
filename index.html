@@ -25,25 +25,30 @@
             Your browser does not support the video .
         </video>
     </div>
-    <canvas width="640" height="360"></canvas>
+    <div id="flex">
+        <canvas width="640" height="360"></canvas>
 
-    <div id="status">
-        <p>Is Mouse Down: <span id="isMouseDownElem">false</span></p>
-        <p>Mouse drag start: <span id="mouseDragStartElem"></span></p>
-        <p>Mouse drag end: <span id="mouseDragEndElem"></span></p>
-        <p>Video time: <span id="vidTimeElem">0</span></p>
-        <p> Mouse Current Position: <span id="mouse-position">0</span></p>
-        <p> Dragging? <span id="mouse-drgging">0</span></p>
-        <p> obj-position <span id="mouse-obj-position">0</span></p>
-        <p> eVENT-position <span id="mouse-event-position">0</span></p>
+        <div id="status">
+            <h4>Mouse Details</h4>
+            <p> Mouse Position: <span id="mouse-position">0</span></p>
+            <p> Mouse distance: <span id="mouse-distance">0</span></p>
+            <p> Mouse Speed: <span id="mouse-speed">0</span></p>
+            <p> Mouse Dragging: <span id="mouse-drgging">0</span></p>
+            <p> Mouse Status <span id="mouse-status">0</span></p>
+            <hr>
+            <h4>Object Details</h4>
+            <p> Mouse Position: <span id="mouse-obj-position">0</span></p>
+            <p> Mouse distance: <span id="mouse-obj-distance">0</span></p>
+            <hr>
+            <h4>Video Details</h4>
+            <p> Current Video Time: <span id="video-current-time">0</span></p>
+            <p> Video Duration Time: <span id="video-duration">0</span></p>
+        </div>
     </div>
 
 
-    <!- Canvas->
-    <canvas width="640" height="360"></canvas>
 
 
-    <p><span id="fps-info">0</span>fps</p>
     <p><pre id="metadata-info"></pre></p>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="script.js" type="text/javascript"></script>
