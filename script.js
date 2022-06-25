@@ -1,7 +1,8 @@
 objDefaults = {
     onDragStart: function(currentTime) {
         console.log('onDragStart called');
-        console.log('currentTime: ' + currentTime)
+        console.log('(obj)currentTime: ' + currentTime);
+        console.log(`Curent Video Time: ${b.$el.cur}`);
     },
     onDragStop: function(videoDuration) {
         console.log('onDragStart called');
@@ -11,7 +12,7 @@ objDefaults = {
     framerate: 60,
     videoDuration: 0,
     currentTime: 0,
-    ready: false,
+    ready: true,
     monitorStartTime: 0,
     monitorInt: 10,
     pointerDistance: 0,
@@ -36,9 +37,6 @@ $('#v0').on('canplay', function() {
     if (initialPlay) return;
     initialPlay = true;
     $(this)[0].currentTime = 0;
-
-
-
 });
 
 $("#v0").bind("mousedown touchstart touchmove touchend mousemove click", function(key) {
@@ -64,13 +62,13 @@ b.refresh = function() {
 
 b.showCurrentTimeFrame = function() {
     let time = b.getNormalizedCurrentFrame();
-    f[time].removeClass("previous-image").addClass("current-image")
+    console.log(`element: ${JSON.stringify(b.$el)[0]}\ncurrent time: ${time.toString()}`);
 }
 b.getNormalizedCurrentFrame = function() {
     var a, b;
-    return e.disableWrap ? (a = Math.min(e.currentFrame, e.totalFrames - (e.zeroBased ? 1 : 0)), b = Math.min(e.endFrame, e.totalFrames - (e.zeroBased ? 1 : 0)), a = Math.max(a, e.zeroBased ? 0 : 1), b = Math.max(b, e.zeroBased ? 0 : 1), e.currentFrame = a, e.endFrame = b) : (a = Math.ceil(e.currentFrame % e.totalFrames)) < 0 && (a += e.totalFrames - (e.zeroBased ? 1 : 0)), a
+    return obj.disableWrap ? (a = Math.min(obj.currentFrame, obj.totalFrames - (obj.zeroBased ? 1 : 0)), b = Math.min(obj.endFrame, obj.totalFrames - (obj.zeroBased ? 1 : 0)), a = Math.max(a, obj.zeroBased ? 0 : 1), b = Math.max(b, obj.zeroBased ? 0 : 1), obj.currentFrame = a, obj.endFrame = b) : (a = Math.ceil(obj.currentFrame % obj.totalFrames)) < 0 && (a += obj.totalFrames - (obj.zeroBased ? 1 : 0)), a
 }, b.getCurrentFrame = function() {
-    return e.currentFrame
+    return obj.currentFrame
 }
 b.render = function() {
         var a;
@@ -137,6 +135,7 @@ function CheckDrag(key) {
     if ("mousedown" === key.type && 1 === key.which || "touchstart" === key.type) {
         obj.pointerStartPosX = b.getPointerEvent(key).pageX;
         obj.dragging = true;
+
         obj.onDragStart(obj.currentTime);
         $("#mouse-drgging").html(`mouse down ${obj.dragging}`);
     } else {
